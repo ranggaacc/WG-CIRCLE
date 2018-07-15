@@ -1,0 +1,10 @@
+@import 'variables';
+
+.btn-primary {
+  background: $color-accent;
+  border-color: $color-accent;
+  &:hover {
+    background: darken($color-accent, 20%);
+    border-color: darken($color-accent, 20%);
+  }
+}

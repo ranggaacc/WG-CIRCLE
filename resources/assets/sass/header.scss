@@ -1,0 +1,199 @@
+@import 'variables';
+@import 'mixins';
+
+.navbar {
+  position: absolute;
+  z-index: 1001;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background: transparent;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  transition: .2s;
+  &.fixed {
+    position: fixed;
+    background: #FFF;
+    color: $color-primary;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    & .navbar-menu-list__link {
+      color: darken(#FFF, 40%);
+      &:hover {
+        color: darken(#FFF, 90%);
+      }
+      &--cta {
+        border-color: darken(#FFF, 40%);
+        &:hover {
+          border-color: darken(#FFF, 90%);
+        }
+      }
+    }
+    & .navbar-btn-icon {
+      background: darken(#FFF, 40%);
+    }
+    & .navbar__img {
+      background: url(../img/logo-itam.png) center no-repeat;
+      background-size: contain;
+    }
+  }
+  &-btn {
+    margin: 15px 0;
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    display: none;
+    @include breakpoint(xs) {
+      display: block;
+    }
+    &-icon {
+      display: block;
+      margin: 5px 0;
+      background: #FFF;
+      height: 3px;
+      width: 20px;
+    }
+  }
+  &__img {
+    content: " ";
+    background: url(../img/logo-putih.png) center no-repeat;
+    background-size: contain;
+    height: 80px;
+    width: 85px;
+  }
+  &-menu {
+    display: block;
+    margin-top: 25px;
+    @include breakpoint(xs) {
+      margin-top: 0;
+      padding: 30px 20px;
+      height: 100vh;
+      width: 250px;
+      position: fixed;
+      left: -250px;
+      top: 0;
+      background: #FFF;
+      transition: .2s;
+    }
+    &.active {
+      @include breakpoint(xs) {
+        left: 0;
+      }
+      & .navbar-menu-list {
+        display: block;
+        padding: 10px 0;
+        &__link {
+          color: #0054A6;
+        }
+        &-dropdown {
+          position: relative;
+          opacity: 1;
+          visibility: visible;
+          border: none;
+          padding-left: 15px;
+          &:before,
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+    &-list {
+      display: inline-block;
+      position: relative;
+      &__link {
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #EEE;
+        transition: .2s;
+        &:hover {
+          color: darken($color-primary, 5%);
+          text-decoration: none;
+        }
+        &--cta {
+          border: 1px solid #EEE;
+          border-radius: 50px;
+          &:hover {
+            border-color: darken($color-primary, 5%);
+          }
+        }
+      }
+      &:hover .navbar-menu-list-dropdown {
+        opacity: 1;
+        visibility: visible;
+      }
+      &-dropdown {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 10px;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        min-width: 200px;
+        display: block;
+        list-style-type: none;
+        padding: 0;
+        background: #FFF;
+        transition: .2s;
+        border: 1px solid $color-dark-grey;
+        &:before {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: -10px;
+          right: 5px;
+          border-color: $color-dark-grey transparent;
+          border-width: 0 10px 10px;
+          border-style: solid;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          position: absolute;
+          top: -8px;
+          right: 7px;
+          border-color: #FFF transparent;
+          border-width: 0 8px 8px;
+          border-style: solid;
+        }
+        &__link {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+          padding: 10px 0 10px 15px;
+          color: $color-primary;
+          cursor: pointer;
+          &:hover {
+            text-decoration: none;
+            color: darken($color-primary, 20%);
+            background: $color-dark-grey;
+          }
+        }
+      }
+    }
+  }
+  &-submenu-list {
+    position: relative;
+    &:hover .navbar-submenu-list-dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+    &-dropdown {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      min-width: 200px;
+      display: block;
+      list-style-type: none;
+      padding: 0;
+      background: #FFF;
+      transition: .2s;
+      border: 1px solid $color-dark-grey;
+    }
+  }
+}

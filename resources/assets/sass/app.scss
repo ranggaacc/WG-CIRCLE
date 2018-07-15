@@ -1,0 +1,114 @@
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* ====================================
+ * This is generated CSS
+ * Don't edit this file directly
+ * ==================================== */
+
+@import "variables";
+
+
+/* Global CSS */
+body {
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+embed, iframe, object, video {
+  margin-bottom: 1.75em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+/* Components */
+.form__btn {
+  display: block;
+  width: 100%;
+}
+
+.flex {
+  &-row {
+    display: flex;
+  }
+  &-col {
+    display: flex;
+  }
+  &-align-center {
+    align-items: center;
+  }
+  &-justify-center {
+    justify-content: center;
+  }
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: .2s;
+}
+.btn-orange-ghost {
+  background: transparent;
+  border: 2px solid $color-accent;
+  color: $color-accent;
+  &:hover {
+    border-color: darken($color-accent, 20%);
+    color: darken($color-accent, 20%);
+  }
+}
+
+/* Typography */
+.text-primary {
+  color: $text-primary;
+}
+.text-secondary {
+  color: $text-secondary;
+}
+.text-disabled {
+  color: $text-disabled;
+}
+.text-white {
+  color: darken(#FFF, 20%);
+}
+.text-accent {
+  color: $color-accent;
+}
+
+/* Section Backgrounds */
+.bg {
+  &-light-primary {
+    background: lighten($color-primary, 60%);
+  }
+  &-dark-primary {
+    background: darken($color-primary, 20%);
+  }
+  &-grey {
+    background: lighten(#212121, 85%);
+  }
+  &-dark-grey {
+    background: $color-dark-grey;
+  }
+  &-black {
+    background: #212121;
+  }
+}
+
+.content {
+  padding: 20px 0 40px;
+
+  & ol, ul {
+    
+    & li {
+      padding-left: 5px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+  }
+}
